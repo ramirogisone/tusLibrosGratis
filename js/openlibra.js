@@ -12,9 +12,8 @@ class Openlibra{
 			categorias
 		}
 	}
-	async obtenerLibros(libro, categoria){
-		console.log(libro, categoria);
-		const respuestaLibro = await fetch(`https://www.etnassoft.com/api/v1/get/?category_id=${categoria}&book_title_index=${libro}`); 
+	async obtenerLibros(titulo, autor, categoria){
+		const respuestaLibro = await fetch(`https://www.etnassoft.com/api/v1/get/?category_id=${categoria}&book_title_index=${titulo}&book_author=${autor}`); 
 		const respuesta = await respuestaLibro.json();
 		return{
 			respuesta

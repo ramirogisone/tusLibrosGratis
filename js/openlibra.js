@@ -1,7 +1,6 @@
 class Openlibra{
 	constructor(){
-		// this.token_auth = 'UJ3KAT2XOUU6XJBLOZES';
-		this.ordenar = 'date';
+		this.ordenar = 'a_z';
 	}
 	//metodos de la api
 	async obtenerCategorias(){

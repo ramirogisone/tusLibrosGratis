@@ -36,4 +36,32 @@ class Interfaz{
 			alert.remove();
 		}
 	}
+	mostrarLibros(libros){
+		const limpiaResultado = this.listado;
+		if(limpiaResultado){
+			limpiaResultado.innerHTML = '';
+		}
+		const listaLibros = libros;
+		listaLibros.forEach(libro => {
+			this.listado.innerHTML += `
+				<div class="col-md-4 mb-4">
+					<div class="card">
+						<img class="img-fluid mb-2" src="${libro.cover}">
+						<div class="card-body">
+							<h5 class="card-title text-center">${libro.title}</h5>
+							<p class="card-text">${libro.content_short}</p>
+							<a href="${libro.url_download}" target="_blank" class="btn btn-primary">Descargar libro</a>
+						</div>
+					</div>
+				</div>
+			`
+		})
+	}
+/* 	mostrarSpinner(){
+		const spinner = document.querySelector('.contenido-spinner');
+		spinner.style.display = 'block';
+		setTimeout(()=> {
+			spinner.style.display = 'none';
+		}, 3000);
+	} */
 }
